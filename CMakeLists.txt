@@ -4,6 +4,10 @@ set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 project(helloworld VERSION ${PROJECT_VESRION})
+# Указываем, что требуется библиотека Boost
+find_package(Boost 1.70 REQUIRED)
+#Подключаем директивы для использования Boost
+include_directories(${Boost_INCLUDE_DIR})
 
 option(WITH_BOOST_TEST "Whether to build Boost test" ON)
 
